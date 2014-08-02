@@ -1,0 +1,151 @@
+// Breakpoint
+//----------------------------------------------------------
+	@mixin breakpoint($point) {
+	  @if $point == papa-bear {
+	    @media (max-width: 1600px) { @content; }
+	  }
+	  @else if $point == mama-bear {
+	    @media (max-width: 1250px) { @content; }
+	  }
+	  @else if $point == baby-bear {
+	    @media (max-width: 650px)  { @content; }
+	  }
+	}
+
+// Icon Fonts
+//----------------------------------------------------------
+	@font-face {
+		font-family: 'elysian';
+		src:url('../fonts/elysian.eot?-fj1w3b');
+		src:url('../fonts/elysian.eot?#iefix-fj1w3b') format('embedded-opentype'),
+			url('../fonts/elysian.woff?-fj1w3b') format('woff'),
+			url('../fonts/elysian.ttf?-fj1w3b') format('truetype'),
+			url('../fonts/elysian.svg?-fj1w3b#icomoon') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+
+	[class^="icon-"], [class*=" icon-"] {
+		font-family: 'elysian';
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+
+		/* Better Font Rendering =========== */
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	[class^="icon-"] span, [class*=" icon-"] span{
+	  display: none;
+	}
+
+	.icon-elysian:before {
+		content: "\e600";
+		font-size: 5.5em;
+	}
+	.icon-elysian-simple:before {
+		content: "\e609";
+		font-size: 4.5em;
+		line-height: .8em;
+	}
+	.icon-play:before {
+		content: "\e601";
+	}
+	.icon-bullhorn:before {
+		content: "\e602";
+	}
+	.icon-googleplus:before {
+		content: "\e603";
+	}
+	.icon-facebook:before {
+		content: "\e604";
+	}
+	.icon-instagram:before {
+		content: "\e605";
+	}
+	.icon-twitter:before {
+		content: "\e606";
+	}
+	.icon-feed:before {
+		content: "\e607";
+	}
+	.icon-soundcloud:before {
+		content: "\e608";
+	}
+
+
+// Normalize 
+//----------------------------------------------------------
+//	@import "normalize";
+
+
+// Foundation Settings
+//----------------------------------------------------------
+	@import "settings";
+
+
+// Tweak the mixin for WordPress 
+// this might create some extra CSS in additional to app.css
+//----------------------------------------------------------
+	@import "foundation/components/pagination";
+
+
+// Foundation Standalone
+// Reverie comes with this already
+//----------------------------------------------------------
+	@import "foundation";
+
+
+// Compass Magic
+// note you will need to install Compass first
+//----------------------------------------------------------
+	@import "compass/css3/shared";
+	@import "compass/css3/border-radius";
+	@import "compass/css3/transition";
+
+
+// Transistion Effects
+//----------------------------------------------------------
+	a, a:visited, a:hover, a:visited:hover {
+		@include transition(all 100ms linear);
+	}
+
+
+// Image Settings
+//----------------------------------------------------------
+	@import "image-settings";
+
+
+// Pagniation
+//----------------------------------------------------------
+	@import "pagination";
+
+
+// Comment System
+//----------------------------------------------------------
+	.avatar {
+		@include border-radius(50%);
+		float: left;
+	}
+
+	@import "comment-styles";
+
+
+// Misc Fixes
+//----------------------------------------------------------
+
+	.admin-bar > .fixed {
+		margin-top: rem-calc(32);
+	}
+
+	.f-topbar-fixed > .container {
+		margin-top: rem-calc(32);
+	}
+
+	#wpadminbar{
+  		position: fixed;
+	}
